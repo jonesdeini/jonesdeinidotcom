@@ -28,6 +28,8 @@ GEM
     raindrops (0.12.0)
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -46,5 +48,6 @@ DEPENDENCIES
   capistrano
   pry
   rvm-capistrano
+  shotgun
   sinatra (~> 1.4.4)
   unicorn (~> 4.8.1)

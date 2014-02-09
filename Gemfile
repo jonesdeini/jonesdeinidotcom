@@ -7,4 +7,5 @@ group :development do
   gem 'capistrano'
   gem 'rvm-capistrano'
   gem 'pry'
+  gem 'shotgun'
 end
