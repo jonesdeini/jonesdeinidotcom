@@ -8,6 +8,8 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
     coderay (1.1.0)
+    haml (4.0.5)
+      tilt
     highline (1.6.20)
     kgio (2.8.1)
     method_source (0.8.2)
@@ -46,6 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  haml (~> 4.0.5)
   pry
   rvm-capistrano
   shotgun

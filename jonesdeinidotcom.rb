@@ -1,10 +1,11 @@
-require "rubygems"
-require "sinatra/base"
+require 'haml'
+require 'sinatra/base'
 
 class Jonesdeinidotcom < Sinatra::Base
 
-  get '/' do
-    'Hello, nginx and unicorn!'
-  end
+  set :haml, format: :html5 # This isn't default?
 
+  get '/' do
+    haml :home
+  end
 end
