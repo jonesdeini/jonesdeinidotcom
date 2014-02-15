@@ -9,7 +9,7 @@ body {
   z-index: 1;
 }
 
-p#heading {
+#page {
   overflow: auto;
   position: relative;
   z-index: 2;
