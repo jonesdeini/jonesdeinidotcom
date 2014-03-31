@@ -8,4 +8,9 @@ class Jonesdeinidotcom < Sinatra::Base
   get '/' do
     haml :home
   end
+
+  get '/blog' do
+    haml :posts
+  end
+
 end
