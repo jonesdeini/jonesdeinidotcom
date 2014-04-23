@@ -1,6 +1,18 @@
 require 'rom'
+require 'do_postgres'
+require_relative '../config/seakrets'
 
-@rom = ROM::Environment.setup(postgres: "postgres://#{PG_USER}:#{PG_PASS}@localhost/#{PG_DATABASE}") do
+class Post
+  include Equalizer.new :id, :title, :body, :comments
+  attr_accessor :id, :title, :body, :comments
+end
+
+class Comment
+  include Equalizer.new :id, :email, :message, :post
+  attr_accessor :id, :email, :message, :post
+end
+
+SCHEMA = ROM::Environment.setup(postgres: "postgres://#{PG_USER}:#{PG_PASS}@localhost/#{PG_DATABASE}") do
   schema do
     base_relation :comments do
       repository :postgres

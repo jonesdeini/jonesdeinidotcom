@@ -1,5 +1,5 @@
-%div#post
-  %h1 Hey bro
+- posts.each do |post|
+  %div#post
+    %h1=post.title
 
-  %p
-    Disrupt asymmetrical art party selfies Pitchfork, Tonx seitan typewriter meh drinking vinegar Cosby sweater. Normcore mixtape Vice PBR, McSweeney's food truck ugh keffiyeh typewriter. Jean shorts Neutra 8-bit fixie, selvage typewriter direct trade four loko stumptown. You probably haven't heard of them authentic photo booth, viral shabby chic selfies fashion axe pug meh post-ironic. Neutra vegan try-hard, Etsy street art cornhole photo booth ennui tofu put a bird on it Shoreditch Banksy Bushwick. Tote bag banjo cardigan cliche distillery. Flannel polaroid chia, art party Bushwick iPhone sartorial chambray bespoke letterpress Wes Anderson Williamsburg.
+    %p=post.body

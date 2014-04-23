@@ -1,5 +1,6 @@
 require 'haml'
 require 'sinatra/base'
+require_relative 'db/schema'
 
 class Jonesdeinidotcom < Sinatra::Base
 
@@ -10,7 +11,8 @@ class Jonesdeinidotcom < Sinatra::Base
   end
 
   get '/blog' do
-    haml :posts
+    posts = SCHEMA[:posts]
+    haml :posts, :locals => { :posts => posts }
   end
 
 end
