@@ -1,18 +1,83 @@
+GIT
+  remote: git@github.com:rom-rb/rom.git
+  revision: a68ebe34c2012647a4e72c0c7a210b2381d42a44
+  branch: master
+  specs:
+    rom (0.2.0)
+      adamantium (~> 0.2.0)
+      addressable (~> 2.3, >= 2.3.3)
+      axiom (~> 0.2.0)
+      axiom-optimizer (~> 0.2.0)
+      charlatan (~> 0.1)
+      concord (~> 0.1.4)
+      morpher (~> 0.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    abstract_type (0.0.7)
+    adamantium (0.2.0)
+      ice_nine (~> 0.11.0)
+      memoizable (~> 0.4.0)
+    addressable (2.3.6)
+    anima (0.2.0)
+      abstract_type (~> 0.0.7)
+      adamantium (~> 0.1)
+      equalizer (~> 0.0.8)
+    ast (2.0.0)
+    axiom (0.2.0)
+      abstract_type (~> 0.0.7)
+      adamantium (~> 0.2.0)
+      axiom-types (~> 0.1.0)
+      descendants_tracker (~> 0.0.3)
+      equalizer (~> 0.0.9)
+    axiom-do-adapter (0.2.0)
+      axiom (~> 0.2.0)
+      axiom-sql-generator (~> 0.2.0)
+      data_objects (~> 0.10.13)
+    axiom-optimizer (0.2.0)
+      axiom (~> 0.2.0)
+    axiom-sql-generator (0.2.0)
+      axiom (~> 0.2.0)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    charlatan (0.1.0)
     coderay (1.1.0)
+    concord (0.1.5)
+      adamantium (~> 0.2.0)
+      equalizer (~> 0.0.9)
+    data_objects (0.10.14)
+      addressable (~> 2.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    do_postgres (0.10.14)
+      data_objects (= 0.10.14)
+    equalizer (0.0.9)
     haml (4.0.5)
       tilt
     highline (1.6.20)
+    ice_nine (0.11.0)
     kgio (2.8.1)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
+    morpher (0.2.3)
+      abstract_type (~> 0.0.7)
+      adamantium (~> 0.2.0)
+      anima (~> 0.2.0)
+      ast (~> 2.0.0)
+      concord (~> 0.1.4)
+      equalizer (~> 0.0.9)
+      ice_nine (~> 0.11.0)
+      procto (~> 0.0.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -20,6 +85,7 @@ GEM
     net-ssh (2.8.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    procto (0.0.2)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -37,6 +103,7 @@ GEM
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
     slop (3.4.7)
+    thread_safe (0.3.3)
     tilt (1.4.1)
     unicorn (4.8.1)
       kgio (~> 2.6)
@@ -47,9 +114,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  axiom (~> 0.2)
+  axiom-do-adapter (~> 0.2)
   capistrano
+  do_postgres
   haml (~> 4.0.5)
   pry
+  rom (~> 0.2)!
   rvm-capistrano
   shotgun
   sinatra (~> 1.4.4)
