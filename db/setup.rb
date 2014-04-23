@@ -9,7 +9,7 @@ def setup_db
 
   connection.create_command(<<-SQL.gsub(/\s+/, ' ').strip).execute_non_query
     CREATE TABLE comments (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      id SERIAL,
       post_id INTEGER NOT NULL,
       email VARCHAR(255),
       message TEXT
@@ -18,7 +18,7 @@ def setup_db
 
   connection.create_command(<<-SQL.gsub(/\s+/, ' ').strip).execute_non_query
     CREATE TABLE posts (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      id SERIAL,
       title VARCHAR(255),
       body TEXT
     )
