@@ -1,7 +1,5 @@
 require 'do_postgres'
-require_relative 'seakrets'
-
-DataObjects.logger.set_log('log/do.log', :debug)
+require_relative '../config/seakrets'
 
 def setup_db
   connection = DataObjects::Connection.new("postgres://#{PG_USER}:#{PG_PASS}@localhost/#{PG_DATABASE}")
