@@ -2,15 +2,7 @@ require 'rom'
 require 'do_postgres'
 require_relative '../config/seakrets'
 
-class Post
-  include Equalizer.new :id, :title, :body, :comments
-  attr_accessor :id, :title, :body, :comments
-end
-
-class Comment
-  include Equalizer.new :id, :email, :message, :post
-  attr_accessor :id, :email, :message, :post
-end
+Dir[File.join(File.dirname(__FILE__), '../models', '*.rb')].each {|file| require_relative file }
 
 SCHEMA = ROM::Environment.setup(postgres: "postgres://#{PG_USER}:#{PG_PASS}@localhost/#{PG_DATABASE}") do
   schema do
