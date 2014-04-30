@@ -12,6 +12,12 @@ class Jonesdeinidotcom < Sinatra::Base
 
   get '/blog' do
     posts = SCHEMA[:posts]
+    comments = SCHEMA[:comments]
+    posts = posts.
+      join(comments).
+      group(comments: comments.project([:comment_id, :email, :message])).
+      project([:post_id, :title, :body, :comments]).to_a
+
     haml :posts, :locals => { :posts => posts }
   end
 
