@@ -7,6 +7,7 @@ def seed
   connection.create_command("INSERT INTO posts VALUES(1, 'sweet title bro', 'sickest blog ever yo')").execute_non_query
 
   connection.create_command("INSERT INTO comments VALUES(1, 1, 'trolling@you.bro', 'worst blog post ever')").execute_non_query
+  connection.create_command("INSERT INTO comments VALUES(2, 1, 'love@you.bro', 'best blog post ever')").execute_non_query
 
   connection.close
 end
