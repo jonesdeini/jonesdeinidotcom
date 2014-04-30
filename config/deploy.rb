@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 require "rvm/capistrano"
 
-set :rvm_ruby_string, "ruby-2.1.0-p0@jonesdeinidotcom"
+set :rvm_ruby_string, "ruby-2.1.1@jonesdeinidotcom"
 
 set :application, "jonesdeinidotcom"
 set :deploy_to, "/home/jonesdeinidotcom"
