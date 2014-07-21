@@ -21,4 +21,8 @@ class Jonesdeinidotcom < Sinatra::Base
     haml :posts, :locals => { :posts => posts }
   end
 
+  get '/test' do
+    haml :test
+  end
+
 end
