@@ -21,6 +21,9 @@ set :unicorn_config, "#{current_path}/config/unicorn.rb"
 set :unicorn_pid, "#{current_path}/tmp/pids"
 
 namespace :deploy do
+  task :symlink do
+    run "cp -R ~/shared/config/* #{release_path}/config/"
+  end
   task :start do
     run "cd #{current_path} && bundle exec unicorn -c #{unicorn_config} -E production -D"
   end
@@ -39,4 +42,5 @@ namespace :deploy do
   end
 end
 
+after 'deploy:update_code', 'deploy:symlink'
 after 'deploy:finalize_update', 'deploy:stop'
