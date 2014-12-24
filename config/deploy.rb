@@ -22,7 +22,7 @@ set :unicorn_pid, "#{current_path}/tmp/pids"
 
 namespace :deploy do
   task :symlink_configs do
-    run "cp -R ~/shared/config/* #{current_path}/config/"
+    run "cp ~/shared/config/seakrets.rb #{current_path}/config/"
   end
   task :start do
     run "cd #{current_path} && bundle exec unicorn -c #{unicorn_config} -E production -D"
