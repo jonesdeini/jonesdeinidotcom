@@ -11,6 +11,9 @@ class Jonesdeinidotcom < Sinatra::Base
   end
 
   get '/blog' do
+  end
+
+  get '/test' do
     posts = SCHEMA[:posts]
     comments = SCHEMA[:comments]
     posts = posts.
@@ -18,11 +21,7 @@ class Jonesdeinidotcom < Sinatra::Base
       group(comments: comments.project([:comment_id, :email, :message])).
       project([:post_id, :title, :body, :comments]).to_a
 
-    haml :posts, :locals => { :posts => posts }
-  end
-
-  get '/test' do
-    haml :test
+    haml :test, :locals => { :posts => posts }
   end
 
 end
