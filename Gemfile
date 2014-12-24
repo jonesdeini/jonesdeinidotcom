@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem "haml", "~> 4.0.5"
+gem 'github-markdown', '~> 0.6.8'
+gem 'haml', "~> 4.0.5"
+gem 'redcarpet', '~> 3.2.2'
 gem 'sinatra', '~> 1.4.4'
 gem 'unicorn', '~> 4.8.1'
 
