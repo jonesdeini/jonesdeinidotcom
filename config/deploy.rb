@@ -20,7 +20,7 @@ role :app, host
 set :unicorn_config, "#{current_path}/config/unicorn.rb"
 set :unicorn_pid, "#{current_path}/tmp/pids"
 
-set :linked_dirs, %w{config}
+set :linked_files, %w{config/seakrets.rb}
 
 namespace :deploy do
   task :start do
