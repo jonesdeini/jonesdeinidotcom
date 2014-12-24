@@ -11,6 +11,7 @@ class Jonesdeinidotcom < Sinatra::Base
   end
 
   get '/blog' do
+    haml :blog
   end
 
   get '/test' do
