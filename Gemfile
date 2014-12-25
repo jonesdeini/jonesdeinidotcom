@@ -13,8 +13,8 @@ gem 'do_postgres'
 gem 'rom', '~> 0.2', git: 'git@github.com:rom-rb/rom.git', branch: 'master'
 
 group :development do
-  gem 'capistrano'
-  gem 'rvm-capistrano'
+  gem 'capistrano', '~> 3.3.5'
+  gem 'capistrano-rvm'
   gem 'pry'
   gem 'shotgun'
 end
