@@ -48,6 +48,9 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
+    capistrano-bundler (1.1.3)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -124,6 +127,7 @@ DEPENDENCIES
   axiom (~> 0.2)
   axiom-do-adapter (~> 0.2)
   capistrano (~> 3.3.5)
+  capistrano-bundler
   capistrano-rvm
   capistrano3-unicorn
   do_postgres

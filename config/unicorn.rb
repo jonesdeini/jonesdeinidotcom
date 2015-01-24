@@ -12,7 +12,7 @@ timeout 30
 listen "#{@dir}tmp/unicorn.sock", :backlog => 64
 
 # Set process id path
-pid "#{@dir}tmp/pids"
+pid "#{@dir}tmp/pids/unicorn.pid"
 
 # Set log file paths
 @log_path = "#{@dir}log"

@@ -26,7 +26,7 @@ set :deploy_to, '/home/jonesdeinidotcom'
 set :linked_files, fetch(:linked_files, []).push('config/seakrets.rb')
 
 # Default value for linked_dirs is []
-# set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push('tmp/pids', 'log')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -34,25 +34,31 @@ set :linked_files, fetch(:linked_files, []).push('config/seakrets.rb')
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :unicorn_config, "#{current_path}/config/unicorn.rb"
-set :unicorn_pid, "#{current_path}/tmp/pids"
+# set :unicorn_config, "#{current_path}/config/unicorn.rb"
+# set :unicorn_pid, "#{current_path}/tmp/pids"
+set :unicorn_rack_env, 'production'
+set :unicorn_config_path, 'config/unicorn.rb'
 
 namespace :deploy do
-  task :start do
-    run "cd #{current_path} && bundle exec unicorn -c #{unicorn_config} -E production -D"
-  end
-  task :stop do
-    run "kill $(< #{unicorn_pid})"
-  end
-  task :graceful_stop do
-    run "kill -s QUIT `cat #{unicorn_pid}`"
-  end
-  task :reload do
-    run "kill -s USR2 $(< #{unicorn_pid})"
-  end
+#   task :start do
+#     run "cd #{current_path} && bundle exec unicorn -c #{unicorn_config} -E production -D"
+#   end
+#   task :stop do
+#     run "kill $(< #{unicorn_pid})"
+#   end
+#   task :graceful_stop do
+#     run "kill -s QUIT `cat #{unicorn_pid}`"
+#   end
+#   task :reload do
+#     run "kill -s USR2 $(< #{unicorn_pid})"
+#   end
+#   task :restart do
+#     # stop
+#     start
+#   end
+
   task :restart do
-    # stop
-    start
+    invoke 'unicorn:restart'
   end
 
   after :restart, :clear_cache do
@@ -64,4 +70,5 @@ namespace :deploy do
     end
   end
 
+  after 'deploy:publishing', 'deploy:restart'
 end
