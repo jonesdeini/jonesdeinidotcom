@@ -15,6 +15,6 @@ listen "#{@dir}tmp/unicorn.sock", :backlog => 64
 pid "#{@dir}tmp/pids/unicorn.pid"
 
 # Set log file paths
-@log_path = "#{@dir}log"
+@log_path = "#{@dir}log/unicorn.log"
 stderr_path "#{@log_path}"
 stdout_path "#{@log_path}"
