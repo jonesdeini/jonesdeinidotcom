@@ -1,1 +1,2 @@
 config/seakrets.rb
+.capistrano/*
